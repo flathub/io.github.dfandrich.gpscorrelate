@@ -1,7 +1,7 @@
 {
     "app-id":"io.github.dfandrich.gpscorrelate",
     "runtime":"org.freedesktop.Platform",
-    "runtime-version":"20.08",
+    "runtime-version":"21.08",
     "sdk":"org.freedesktop.Sdk",
     "command":"gpscorrelate-gui",
     "finish-args":[
@@ -34,12 +34,8 @@
           "sources": [
               {
                   "type": "archive",
-                  "url": "https://www.exiv2.org/builds/exiv2-0.27.3-Source.tar.gz",
-                  "sha256": "a79f5613812aa21755d578a297874fb59a85101e793edc64ec2c6bd994e3e778"
-              },
-              {
-                  "type": "patch",
-                  "path": "exiv-0.27.3-git-arm-flags.patch"
+                  "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.5/exiv2-0.27.5-Source.tar.gz",
+                  "sha256": "35a58618ab236a901ca4928b0ad8b31007ebdc0386d904409d825024e45ea6e2"
               }
           ]
         },
