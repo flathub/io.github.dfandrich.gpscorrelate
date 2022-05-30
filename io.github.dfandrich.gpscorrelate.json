@@ -11,7 +11,7 @@
       /* Neeeded until the application uses a file chooser portal */
       "--filesystem=host",
       /* Needed for gvfs to work */
-      "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*"
+      "--talk-name=org.gtk.vfs.*"
     ],
     "modules":[
         {
