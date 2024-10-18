@@ -1,7 +1,7 @@
 {
     "app-id":"io.github.dfandrich.gpscorrelate",
     "runtime":"org.freedesktop.Platform",
-    "runtime-version":"23.08",
+    "runtime-version":"24.08",
     "sdk":"org.freedesktop.Sdk",
     "command":"gpscorrelate-gui",
     "finish-args":[
@@ -30,8 +30,8 @@
               "/include",
               "/lib/pkgconfig",
               "/lib/*.a",
-              "/share/cmake/exiv2/*",
-              "/share/man/man1/*"
+              "/lib/cmake/*",
+              "/share/man/*"
           ],
           "sources": [
               {
@@ -42,24 +42,33 @@
           ]
         },
         {
+            "name": "intltool",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                }
+            ]
+        },
+        {
             "name": "gpscorrelate-gui",
             "buildsystem": "simple",
             "build-commands": [
-                "sed -i -e 's/ xml:lang=.en.//' io.github.dfandrich.gpscorrelate.metainfo.xml  # fixed post-2.1",
                 "make -j${FLATPAK_BUILDER_N_JOBS} prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale CFLAGS=\"${CFLAGS} -DENABLE_NLS=1\" CXXFLAGS=\"${CXXFLAGS} -DENABLE_NLS=1\"",
-                "make prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale install install-po install-desktop-file",
+                "make prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale install install-po install-desktop-file io.github.dfandrich.gpscorrelate.metainfo.xml",
                 "install -m0644 -Dp ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
                 "make check"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/dfandrich/gpscorrelate/releases/download/2.1/gpscorrelate-2.1.tar.xz",
-                    "sha256": "006ad389e3579b2e3ed3046902ed577ecc8253ab159f9d4034131dd38f827281"
+                    "url": "https://github.com/dfandrich/gpscorrelate/releases/download/2.2/gpscorrelate-2.2.tar.xz",
+                    "sha256": "91bc7e2a8de7df0b1c47322dbd6f2f16a9922100330b9cff66d392de87eff0bc"
                 }
             ],
             "cleanup": [
-                "/share/cmake",
                 "/share/man"
             ]
         }
