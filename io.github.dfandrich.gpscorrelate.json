@@ -42,22 +42,11 @@
           ]
         },
         {
-            "name": "intltool",
-            "cleanup": [ "*" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-                }
-            ]
-        },
-        {
             "name": "gpscorrelate-gui",
             "buildsystem": "simple",
             "build-commands": [
                 "make -j${FLATPAK_BUILDER_N_JOBS} prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale CFLAGS=\"${CFLAGS} -DENABLE_NLS=1\" CXXFLAGS=\"${CXXFLAGS} -DENABLE_NLS=1\"",
-                "make prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale install install-po install-desktop-file io.github.dfandrich.gpscorrelate.metainfo.xml",
+                "make prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale install install-po install-desktop-file",
                 "install -m0644 -Dp ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
                 "make check"
             ],
