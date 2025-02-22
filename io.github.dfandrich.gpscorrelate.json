@@ -36,7 +36,12 @@
               {
                   "type": "archive",
                   "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.4.tar.gz",
-                  "sha256": "65cb3a813f34fb6db7a72bba3fc295dd6c419082d2d8bbf96518be6d1024b784"
+                  "sha256": "65cb3a813f34fb6db7a72bba3fc295dd6c419082d2d8bbf96518be6d1024b784",
+                  "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 769,
+                        "url-template": "https://github.com/Exiv2/exiv2/archive/refs/tags/v$version.tar.gz"
+                  }
               }
           ]
         },
@@ -53,7 +58,13 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/dfandrich/gpscorrelate/releases/download/2.3/gpscorrelate-2.3.tar.xz",
-                    "sha256": "1f66383d5a660d5744c6e8d329124207620984091e4772cc5b34c799e618d3ba"
+                    "sha256": "1f66383d5a660d5744c6e8d329124207620984091e4772cc5b34c799e618d3ba",
+                    "x-checker-data": {
+                        "is-main-source": true,
+                        "type": "anitya",
+                        "project-id": 1247,
+                        "url-template": "https://github.com/dfandrich/gpscorrelate/releases/download/$version/gpscorrelate-$version.tar.xz"
+                    }
                 }
             ],
             "cleanup": [
