@@ -48,7 +48,7 @@
             "name": "gpscorrelate-gui",
             "buildsystem": "simple",
             "build-commands": [
-                "make -j${FLATPAK_BUILDER_N_JOBS} prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale CFLAGS=\"${CFLAGS} -DENABLE_NLS=1\" CXXFLAGS=\"${CXXFLAGS} -DENABLE_NLS=1\"",
+                "make -j${FLATPAK_BUILDER_N_JOBS} prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale CFLAGS=\"${CFLAGS} -DENABLE_NLS=1\" CXXFLAGS=\"${CXXFLAGS} -DENABLE_NLS=1\" LDFLAGS=\"${LDFLAGS}\"",
                 "make prefix=${FLATPAK_DEST} localedir=${FLATPAK_DEST}/share/gpscorrelate/locale install install-po install-desktop-file",
                 "install -m0644 -Dp ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
                 "make check"
