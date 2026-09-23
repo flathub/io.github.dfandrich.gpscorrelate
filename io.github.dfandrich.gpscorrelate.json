@@ -56,8 +56,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/dfandrich/gpscorrelate/releases/download/2.3/gpscorrelate-2.3.tar.xz",
-                    "sha256": "1f66383d5a660d5744c6e8d329124207620984091e4772cc5b34c799e618d3ba",
+                    "url": "https://github.com/dfandrich/gpscorrelate/releases/download/2.4/gpscorrelate-2.4.tar.xz",
+                    "sha256": "4c6a4c492995629e583a9e25b6727b729ec850fb907260650580248567cc3b51",
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "anitya",
